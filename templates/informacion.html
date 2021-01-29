@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Searchflix - Elige tu proxima pelicula</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="//fonts.googleapis.com/css?family=Roboto:400,500,900" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Roboto+Mono:500" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/estilos.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/normalize.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/custom.css')}}">
+
+</head>
+
+<body>
+    <!-- Image and text -->
+    <<nav class="navbar navbar bg-dark main-navbar">
+        <a class="navbar-brand" href="{{ url_for('index') }}">
+            <img src="static/img/Logo.png" width="40" height="50" class="d-inline-block align-top" alt=""> Searchflix
+        </a>
+        <ul class="nav justify-content-end">
+            <li class="nav-item">
+                <a class="nav-link top-peliculas" href="{{ url_for('topPeliculas') }}">Top peliculas</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link top-peliculas" href="{{ url_for('topShows')}}">Top shows de TV</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link top-peliculas" href="{{ url_for('recomendada') }}">Pelicúlas recomendadas</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link top-peliculas" href="{{ url_for('recientes')}}">Busquedas recientes</a>
+            </li>
+        </ul>
+        </nav>
+
+
+        <div class="mycontainer">
+            <form action="/recomendar" method="POST">
+                <div id="movieinfo" class="movieinfo">
+                    {% if movie['cover'] %}
+                    <img class="poster" src="{{ movie['cover'] }}"> {% endif %}
+                    <div class="infotext">
+                        <div class="infotext-head">
+                            <h1 class="movie-title">{{ movie['long title']}}</h1>
+                            <i id="heart" class="material-icons md-fav">favorite</i>
+                        </div>
+                        {% if movie['rating'] %}
+                        <div class="rating">
+                            <i class="material-icons gold"> star </i>
+                            <p class="rating-no">{{ movie['rating'] }}</p>
+
+                        </div>
+                        {% endif %}
+                        <p class="genres">{{ movie['genres'] }} </p>
+                        <p class="runtime">{{ movie['runtime'] }}</p>
+                        <p class="plot"> {{ movie['plot'] }} </p>
+                        <p class="director">Director: {{ movie['director'] }}</p>
+                        <p class="writer">Writer: {{ movie['writer'] }}</p>
+                        <input type="hidden" name="id" value="{{ movie['id'] }}">
+                        <input type="hidden" name="titulo" value="{{ movie['long title']}}">
+                        <input type="hidden" name="poster" value="{{ movie['cover'] }}">
+                        <input type="hidden" name="rating" value="{{ movie['rating'] }}">
+                        <input type="hidden" name="genero" value="{{ movie['genres'] }}">
+                        <input type="hidden" name="duracion" value="{{ movie['runtime'] }}">
+                        <input type="hidden" name="trama" value="{{ movie['plot'] }}">
+                        <input type="hidden" name="director" value="{{ movie['director'] }}">
+                        <input type="hidden" name="escritor" value="{{ movie['writer'] }}">
+
+
+                        <button id="recButton" type=submit class="fav">
+                    <i class="material-icons md-fav">favorite</i>
+                    <p class="fav-text">Recomendar</p>
+                </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+
+
+
+
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+
+</body>
+
+</html>

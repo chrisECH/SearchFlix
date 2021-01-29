@@ -1,0 +1,190 @@
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: url('../img/bg.jpg');
+}
+
+.div-titulo {
+    margin-top: 20px;
+    text-align: center;
+}
+
+h1.titulo {
+    color: red;
+    font-size: 50px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-style: oblique;
+}
+
+.main-navbar {
+    background: #000000 !important;
+}
+
+.main-navbar a {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-align: center;
+    color: red;
+}
+
+nav ul li .top-peliculas {
+    font-size: 20px;
+}
+
+nav ul li .top-peliculas:hover {
+    color: #941010;
+}
+
+.container .logo {
+    height: 200px;
+    width: 200px;
+}
+
+.container .logo img {
+    height: 100%;
+    width: 100%;
+}
+
+.container .search {
+    width: 1000px;
+}
+
+.container .search input {
+    width: 100%;
+    border-radius: 20px;
+    text-align: center;
+}
+
+.profile {
+    background-color: white;
+    padding: 2.5rem;
+    border-radius: 1.6rem;
+    box-shadow: 0 10px 20px 3px rgba(0, 0, 0, 0.15);
+    margin-top: 2.5rem;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 4rem;
+}
+
+@media only screen and (max-width: 767px) {
+    .profile {
+        width: 95%;
+        padding: 1rem;
+    }
+}
+
+.profile-head h1 {
+    font-weight: 700;
+    font-size: 2.5rem;
+}
+
+.profile-username {
+    font-family: "Roboto Mono";
+    font-size: 1.2rem;
+}
+
+.divider {
+    padding-top: 2rem;
+    width: 100%;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+}
+
+.profile-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.profile-head-left {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+}
+
+.profile-head-right {
+    width: 50%;
+    /* display: flex; */
+    display: none;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.profile-fav-count {
+    display: flex;
+    align-items: center;
+}
+
+.profile-fav-count i {
+    padding-right: 0.4rem;
+}
+
+.profile-fav-genre {
+    font-weight: 500;
+}
+
+.profile h2 {
+    margin-top: 1rem;
+    font-size: 1.4rem;
+    font-weight: 500;
+}
+
+.profile-list-item {
+    display: flex;
+    align-items: flex-start;
+}
+
+.profile-list-item {
+    padding: 0.8rem 0.8rem;
+    display: flex;
+    align-items: flex-start;
+    border-radius: 0.8rem;
+}
+
+.profile-list-item:hover {
+    background-color: #eaeaea;
+}
+
+.profile-list-item:focus {
+    outline: none;
+}
+
+.profile-list-item:active {
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0);
+    outline: none;
+}
+
+.profile-list-item-text {
+    padding-left: 1rem;
+}
+
+.profile-list-title {
+    font-size: 1.4rem;
+    line-height: 1.2;
+}
+
+.profile-list-rating {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+
+.profile-list-rating .material-icons.gold {
+    font-size: 1.4rem;
+}
+
+.profile-list-rating .rating-no {
+    font-size: 0.9rem;
+    font-family: "Roboto Mono";
+}
+
+.profile-list-poster {
+    display: inline-block;
+    min-width: 60px;
+    width: 10%;
+}
